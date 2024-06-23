@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header, nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2em;
+}
+
+/* Game List Styles */
+#game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.game-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-card h3 {
+    margin-top: 0;
+}
+
+.game-card a {
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+}
+
+.game-card a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Game Page Styles */
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#chess-board {
+    border: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1px;
+    margin: 1em 0;
+}
+
+#chess-board div {
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+}
