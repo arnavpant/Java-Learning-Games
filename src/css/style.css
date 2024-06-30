@@ -71,16 +71,29 @@ main {
     margin: 0 auto;
 }
 
+/* Chessboard Styles */
 #chess-board {
-    border: 2px solid #333;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 1px;
-    margin: 1em 0;
+    gap: 0;
+    margin: 1em auto;
+    width: 400px;
+    height: 400px;
 }
 
 #chess-board div {
-    background-color: #fff;
-    height: 50px;
-    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
 }
+
+#chess-board .white {
+    background-color: #f0d9b5; /* Light brown */
+}
+
+#chess-board .black {
+    background-color: #341D18; /* Dark brown */
+}
+
