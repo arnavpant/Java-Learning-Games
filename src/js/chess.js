@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const board = document.getElementById('chess-board');
-    let selectedPiece = null;
-    let selectedSquare = null;
 
     const initialBoard = [
         ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
@@ -30,26 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (initialBoard[row][col]) {
                     square.innerHTML = pieceIcons[initialBoard[row][col]];
                 }
-                square.addEventListener('click', () => handleSquareClick(square, row, col));
                 board.appendChild(square);
             }
-        }
-    }
-
-    function handleSquareClick(square, row, col) {
-        if (selectedPiece) {
-            // Move piece
-            const oldRow = selectedSquare.dataset.row;
-            const oldCol = selectedSquare.dataset.col;
-            initialBoard[oldRow][oldCol] = '';
-            initialBoard[row][col] = selectedPiece;
-            selectedPiece = null;
-            selectedSquare = null;
-            createBoard();
-        } else if (initialBoard[row][col]) {
-            // Select piece
-            selectedPiece = initialBoard[row][col];
-            selectedSquare = square;
         }
     }
 
