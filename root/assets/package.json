@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "word-list": "^4.1.0",
+    "word-list-json": "^0.2.0"
+  }
+}

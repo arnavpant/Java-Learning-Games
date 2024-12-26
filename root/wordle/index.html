@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Wordle</h1>
+    <label for="word-length">Select Word Length:</label>
+    <select id="word-length" onchange="changeWordLength()">
+      <option value="4">4 Letters</option>
+      <option value="5" selected>5 Letters</option>
+      <option value="6">6 Letters</option>
+      <option value="7">7 Letters</option>
+    </select>
+  </header>
+  <main>
+    <div id="grid-container"></div>
+    <div id="solution-display" style="margin-top: 20px; color: gray; font-size: 14px;">Solution: </div>
+  </main>
+  <script src="wordle.js"></script>
+</body>
+</html>
