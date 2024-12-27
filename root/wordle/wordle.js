@@ -103,30 +103,52 @@ function handleEnter() {
 
 function checkGuess() {
   const startIndex = guessCount * currentWordLength;
+  const wordLetterCount = {}; // To track available letters in the word
 
+  // Count occurrences of each letter in the currentWord
+  for (let letter of currentWord) {
+    wordLetterCount[letter] = (wordLetterCount[letter] || 0) + 1;
+  }
+
+  // Step 1: Mark correct letters (green)
   for (let i = 0; i < currentWordLength; i++) {
     const tile = document.getElementById(`tile-${startIndex + i}`);
     if (currentGuess[i] === currentWord[i]) {
-      tile.classList.add('correct');
-    } else if (currentWord.includes(currentGuess[i])) {
-      tile.classList.add('present');
-    } else {
-      tile.classList.add('absent');
+      tile.classList.add('correct'); // Mark as green
+      wordLetterCount[currentGuess[i]]--; // Decrease available count for this letter
     }
   }
 
+  // Step 2: Mark present letters (yellow)
+  for (let i = 0; i < currentWordLength; i++) {
+    const tile = document.getElementById(`tile-${startIndex + i}`);
+    // Skip if already marked as correct
+    if (tile.classList.contains('correct')) continue;
+
+    if (currentWord.includes(currentGuess[i]) && wordLetterCount[currentGuess[i]] > 0) {
+      tile.classList.add('present'); // Mark as yellow
+      wordLetterCount[currentGuess[i]]--; // Decrease available count for this letter
+    } else {
+      tile.classList.add('absent'); // Mark as gray
+    }
+  }
+
+  // Check if the guess is correct
   if (currentGuess === currentWord) {
     setTimeout(() => alert('You guessed it!'), 500);
     return;
   }
 
+  // Move to the next guess
   guessCount++;
   currentGuess = '';
 
+  // If out of guesses, end the game
   if (guessCount === maxGuesses) {
     setTimeout(() => alert(`Game Over! The word was "${currentWord}".`), 500);
   }
 }
+
 
 // Load the default word bank and start the game
 loadWordBank(currentWordLength);
