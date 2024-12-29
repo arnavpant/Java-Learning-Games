@@ -17,6 +17,41 @@ main {
   padding: 20px;
 }
 
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.game-item {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 150px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-item img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.game-item p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
 #grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -51,3 +86,5 @@ main {
 .tile.absent {
   background-color: #3a3a3c; /* Gray */
 }
+
+

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f3f3f3;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  
+  #game-status {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  #reset-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #reset-btn:hover {
+    background-color: #ff4500;
+  }
+  
+  #board {
+    margin: 20px auto;
+    border: 1px solid #333;
+  }
+  
