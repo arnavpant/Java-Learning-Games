@@ -6,7 +6,6 @@ const resetBtn = document.getElementById('reset-btn');
 // Initialize the board
 function initBoard() {
   console.log('Initializing board...');
-
   try {
     // Check if Chessboard.js is loaded
     if (typeof Chessboard === 'undefined') {
@@ -30,12 +29,15 @@ function initBoard() {
 
 // Handle piece drag start
 function handleDragStart(source, piece) {
-  if (game.game_over()) return false; // Prevent dragging if the game is over
+  // Prevent dragging if the game is over
+  if (game.game_over()) return false;
+
+  // Prevent dragging opponent's pieces
   if (
     (game.turn() === 'w' && piece.startsWith('b')) ||
     (game.turn() === 'b' && piece.startsWith('w'))
   ) {
-    return false; // Prevent dragging opponent's pieces
+    return false;
   }
 }
 
@@ -47,10 +49,12 @@ function handleMove(source, target) {
     promotion: 'q', // Always promote to a queen
   });
 
-  if (move === null) return 'snapback'; // Invalid move
+  // If the move is invalid, snap the piece back
+  if (move === null) return 'snapback';
 
+  // Update game status and allow AI to move
   updateStatus();
-  setTimeout(makeAIMove, 500); // Make AI move
+  setTimeout(makeAIMove, 500);
 }
 
 // Update the board position after the piece is dropped

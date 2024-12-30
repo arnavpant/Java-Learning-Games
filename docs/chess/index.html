@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chess</title>
-  <!-- Custom styles for the Chess game -->
+  <title>Custom Chess Game</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Chessboard.js styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
 </head>
 <body>
   <header>
-    <h1>Chess</h1>
+    <h1>Custom Chess Game</h1>
     <div id="game-status">White's Turn</div>
-    <button id="reset-btn">Reset Game</button>
+    <button id="reset-btn">Restart Game</button>
   </header>
   <main>
-    <!-- Chessboard container -->
-    <iframe style="width: 400px; height: 560px;" src="https://www.chess.com/daily_puzzle" frameborder="0"></iframe>
     <div id="board" style="width: 400px; margin: auto;"></div>
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+  <script src="chess.js"></script>
 </body>
 </html>
